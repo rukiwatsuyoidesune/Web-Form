@@ -4,51 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
+    <style>
+        body {
+            background-color: Lightskyblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        .container {
+            background-color: white;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="password"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        textarea {
+            resize: none;
+        }
+        input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+        .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .radio-group label {
+            margin-right: 15px;
+        }
+        .input-group {
+            display: flex;
+        }
+        .input-group input[type="text"] {
+            width: 120%;
+        }
+    </style>
 </head>
 <h2>Form Registrasi Unit Kegiatan</h2>
-<body bgcolor="Lightskyblue">
-    <br>
-    <br>
-    <form>
-        <label>Nama Depan </label>
-        <input type="text" name="firstname" size="15"/><br><br>
-        <label>Nama Belakang </label>
-        <input type="text" name="middlename" size="15"/><br><br>
+<body>
+    <div class="container">
+        <form>
+            <div class="input-group">
+                <div style="margin-right: 80px;">
+                    <label>Nama Depan</label>
+                    <input type="text" name="firstname" />
+                </div>
+                <div>
+                    <label>Nama Belakang</label>
+                    <input type="text" name="lastname" />
+                </div>
+            </div>
+            
+            <label>Unit Kegiatan</label>
+            <select>
+                <option value="Olahraga">Olahraga</option>
+                <option value="Seni">Seni</option>
+                <option value="Bela Diri">Bela Diri</option>
+                <option value="Robotik">Robotik</option>
+                <option value="Otomotif">Otomotif</option>
+                <option value="Keagamaan">Keagamaan</option>
+                <option value="Kewirausahaan">Kewirausahaan</option>
+            </select>
 
-        <label>Unit Kegiatan : </label>
-        <select>
-            <option value="Olahraga">Olahraga</option>
-            <option value="Seni">Seni</option>
-            <option value="Bela Diri">Bela Diri</option>
-            <option value="Robotik">Robotik</option>
-            <option value="Otomotif">Otomotif</option>
-            <option value="Keagamaan">Keagamaan</option>
-            <option value="Kewirausahaan">Kewirausahaan</option>
-        </select>
-        <br>
-        <br>
-        <label>Gender : </label><br>
-        <input type="radio" name="male"/>Male <br>
-        <input type="radio" name="female"/>Female <br>
-        <br>
+            <div class="radio-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+            </div>
 
-        <label>No. HP : </label>
-        <input type="text" name="country code" value="+62" size="2"/>
-        <input type="text" name="phone" size="10"/><br><br>
-        Alamat
-        <br>
-        <textarea cols="80" rows="5" value="address">
-        </textarea>
-        <br><br>
-        Email :
-        <input type="email" id="email" name="email"/><br>
-        <br><br>
-        Password:
-        <input type="password" id="pass" name="pass"><br>
-        <br><br>
-        Re-type Password:
-        <input type="password" id="repass" name="repass"><br>
-        <input type="button" value="Submit"/>
-    </form>
+            <label>No. HP:</label>
+            <div class="input-group">
+                <input type="text" name="country code" value="+62" size="2"/>
+                <input type="text" name="phone" size="10"/>
+            </div>
+
+            <label>Alamat</label>
+            <div class="input-group">
+                <textarea cols="30" rows="5"></textarea>
+            </div>
+
+            <label>Email</label>
+            <div class="input-group">
+                <input type="email" id="email" name="email"/>
+            </div>
+
+            <label>Password</label>
+            <div class="input-group">
+                <input type="password" id="pass" name="pass"/>
+            </div>
+
+            <label>Re-type Password</label>
+            <div class="input-group">
+                <input type="password" id="repass" name="repass"/>
+            </div>
+
+            <input type="button" value="Submit"/>
+        </form>
+    </div>
 </body>
 </html>
